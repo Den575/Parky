@@ -36,7 +36,7 @@ namespace ParkyAPI.Repository
 
         public ICollection<NationalPark> GetNationalParks()
         {
-            return _db.NationalParks.OrderBy(i => i.Name).ToList();
+            return _db.NationalParks.OrderBy(i => i.Id).ToList();
         }
 
         public bool NationalParkExist(string name)

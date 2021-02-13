@@ -38,3 +38,5 @@ C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\obj\Debug\netcoreapp3.1\stat
 C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\obj\Debug\netcoreapp3.1\ParkyAPI.dll
 C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\obj\Debug\netcoreapp3.1\ParkyAPI.pdb
 C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\obj\Debug\netcoreapp3.1\ParkyAPI.genruntimeconfig.cache
+C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

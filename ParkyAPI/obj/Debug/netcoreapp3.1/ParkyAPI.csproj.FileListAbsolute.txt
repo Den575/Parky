@@ -40,3 +40,8 @@ C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\obj\Debug\netcoreapp3.1\Park
 C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\obj\Debug\netcoreapp3.1\ParkyAPI.genruntimeconfig.cache
 C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\bin\Debug\netcoreapp3.1\AutoMapper.dll
 C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
+C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\bin\Debug\netcoreapp3.1\Microsoft.OpenApi.dll
+C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.Swagger.dll
+C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerGen.dll
+C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\bin\Debug\netcoreapp3.1\Swashbuckle.AspNetCore.SwaggerUI.dll
+C:\Users\kursi\source\repos\Projects\Parky\ParkyAPI\obj\Debug\netcoreapp3.1\ParkyAPI.MvcApplicationPartsAssemblyInfo.cs

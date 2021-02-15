@@ -14,7 +14,9 @@ using ParkyAPI.Repository;
 using ParkyAPI.Repository.IRepository;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace ParkyAPI
@@ -36,12 +38,26 @@ namespace ParkyAPI
             services.AddAutoMapper(typeof(ParkyMappings));
             services.AddControllers();
             services.AddSwaggerGen(options =>
-            options.SwaggerDoc("ParkyOpenAPISpec", new Microsoft.OpenApi.Models.OpenApiInfo()
             {
-                Title = "Parky API",
-                Version = "1"
-            }));
+                options.SwaggerDoc("ParkyOpenAPISpec",
+                new Microsoft.OpenApi.Models.OpenApiInfo()
+                {
+                    Title = "Parky API",
+                    Version = "1",
+                    Description = "Denys Kutsenko API Project",
+                    License = new Microsoft.OpenApi.Models.OpenApiLicense()
+                    {
+                        Name = "MIT Licence",
+                        Url = new Uri("https://en.wikipedia.org/wiki/MIT_License")
+                    }
+                });
+                var xmlCommentFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var cmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentFile);
+                options.IncludeXmlComments(cmlCommentsFullPath);
+
+            });
         }
+    
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
@@ -57,6 +73,7 @@ namespace ParkyAPI
             app.UseSwaggerUI(options=>
             {
                 options.SwaggerEndpoint("/swagger/ParkyOpenAPISpec/swagger.json", "Parky API");
+                options.RoutePrefix = "";
             });
 
             app.UseAuthorization();

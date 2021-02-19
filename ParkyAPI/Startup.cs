@@ -40,10 +40,29 @@ namespace ParkyAPI
             services.AddControllers();
             services.AddSwaggerGen(options =>
             {
-                options.SwaggerDoc("ParkyOpenAPISpec",
+                options.SwaggerDoc("ParkyOpenAPISpecNationalPark",
                 new Microsoft.OpenApi.Models.OpenApiInfo()
                 {
-                    Title = "Parky API",
+                    Title = "Parky API NP",
+                    Version = "1",
+                    Description = "Denys Kutsenko API Project NP",
+                    License = new Microsoft.OpenApi.Models.OpenApiLicense()
+                    {
+                        Name = "MIT Licence",
+                        Url = new Uri("https://en.wikipedia.org/wiki/MIT_License")
+                    }
+                });
+                var xmlCommentFile = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml";
+                var cmlCommentsFullPath = Path.Combine(AppContext.BaseDirectory, xmlCommentFile);
+                options.IncludeXmlComments(cmlCommentsFullPath);
+
+            });
+            services.AddSwaggerGen(options =>
+            {
+                options.SwaggerDoc("ParkyOpenAPISpecTrails",
+                new Microsoft.OpenApi.Models.OpenApiInfo()
+                {
+                    Title = "Parky API Trails",
                     Version = "1",
                     Description = "Denys Kutsenko API Project",
                     License = new Microsoft.OpenApi.Models.OpenApiLicense()
@@ -73,7 +92,8 @@ namespace ParkyAPI
             app.UseSwagger();
             app.UseSwaggerUI(options=>
             {
-                options.SwaggerEndpoint("/swagger/ParkyOpenAPISpec/swagger.json", "Parky API");
+                options.SwaggerEndpoint("/swagger/ParkyOpenAPISpecNationalPark/swagger.json", "Parky API NP");
+                options.SwaggerEndpoint("/swagger/ParkyOpenAPISpecTrails/swagger.json", "Parky API Trails");
                 options.RoutePrefix = "";
             });
 

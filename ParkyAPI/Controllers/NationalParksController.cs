@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace ParkyAPI.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/v{version:apiVersion}/nationalparks")]
     [ApiController]
-    [ApiExplorerSettings(GroupName = "ParkyOpenAPISpecNationalPark")]
+    //[ApiExplorerSettings(GroupName = "ParkyOpenAPISpecNationalPark")]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public class NationalParksController : Controller
     {
@@ -96,7 +96,7 @@ namespace ParkyAPI.Controllers
                 ModelState.AddModelError("", "Error with saving file");
                 return StatusCode(500, ModelState);
             }
-            return CreatedAtRoute("GetNationlPark", new {nationalParkId = nationalPark.Id}, nationalPark);
+            return CreatedAtRoute("GetNationlPark", new {version=HttpContext.GetRequestedApiVersion().ToString(), nationalParkId = nationalPark.Id}, nationalPark);
 
         }
         /// <summary>

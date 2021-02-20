@@ -11,9 +11,9 @@ using System.Threading.Tasks;
 
 namespace ParkyAPI.Controllers
 {
-    [Route("api/Trails")]
+    [Route("api/v{version:apiVersion}/trails")]
     [ApiController]
-    [ApiExplorerSettings(GroupName = "ParkyOpenAPISpecTrails")]
+    //[ApiExplorerSettings(GroupName = "ParkyOpenAPISpecTrails")]
     [ProducesResponseType(StatusCodes.Status400BadRequest)]
     public class TrailsController : Controller
     {
@@ -64,7 +64,11 @@ namespace ParkyAPI.Controllers
             TrailDto TrailDto = _mapper.Map<TrailDto>(Trail);
             return Ok(TrailDto);
         }
-
+        /// <summary>
+        /// Get Trail with national Park
+        /// </summary>
+        /// <param name="nationalParkId"></param>
+        /// <returns></returns>
         [HttpGet("[action]/{nationalParkId:int}")]
         [ProducesResponseType(200, Type = typeof(TrailDto))]
         [ProducesResponseType(404)]
@@ -81,8 +85,6 @@ namespace ParkyAPI.Controllers
             {
                 objDto.Add(_mapper.Map<TrailDto>(obj));
             }
-
-
             return Ok(objDto);
 
         }

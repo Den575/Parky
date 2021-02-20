@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "N8yLH62rq/J/tHE3Aku0qcMEQPQTnZYSrR6MKcRtV9Ft0OS54FiOqrekmTnXDadZeEiCLdI52mkSF4MNplXXwQ==",
+  "dgSpecHash": "J79fKYYgy58QSZDjQqVzjAsQ3wXHu76b+x4EuVcLFU10q9+Z/wySkiQbZDtWEjs2KigCd+VwabUr2fKb0/opMA==",
   "success": true,
   "projectFilePath": "C:\\Users\\kursi\\source\\repos\\Projects\\Parky\\ParkyAPI\\ParkyAPI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\kursi\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\kursi\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
+    "C:\\Users\\kursi\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning\\4.1.0\\microsoft.aspnetcore.mvc.versioning.4.1.0.nupkg.sha512",
+    "C:\\Users\\kursi\\.nuget\\packages\\microsoft.aspnetcore.mvc.versioning.apiexplorer\\4.1.0\\microsoft.aspnetcore.mvc.versioning.apiexplorer.4.1.0.nupkg.sha512",
     "C:\\Users\\kursi\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.0\\microsoft.bcl.asyncinterfaces.1.1.0.nupkg.sha512",
     "C:\\Users\\kursi\\.nuget\\packages\\microsoft.bcl.hashcode\\1.1.0\\microsoft.bcl.hashcode.1.1.0.nupkg.sha512",
     "C:\\Users\\kursi\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

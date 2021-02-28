@@ -15,7 +15,7 @@
 <form method="post" asp-action="Upsert" enctype="multipart/form-data">
     <div asp-validation-summary="ModelOnly" class="text-danger"></div>
     <div class="row px-2 mx-2 backgroundWhite border">
-        <input type="hidden" asp-for="Id" />
+        <input type="hidden" asp-for="@Model.Id" />
         <div class="col-12 p-3">
             <h2 class="text-primary">@title</h2>
         </div>

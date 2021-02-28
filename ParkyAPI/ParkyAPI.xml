@@ -10,7 +10,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:ParkyAPI.Controllers.NationalParksController.GetNationlPark(System.Int32)">
+        <member name="M:ParkyAPI.Controllers.NationalParksController.GetNationalPark(System.Int32)">
             <summary>
             Get individual national park
             </summary>

@@ -49,12 +49,12 @@ namespace ParkyAPI.Controllers
         /// </summary>
         /// <param name="nationalParkId">The id of the national park</param>
         /// <returns></returns>
-        [HttpGet("{nationalParkId:int}", Name = "GetNationlPark")]
+        [HttpGet("{nationalParkId:int}", Name = "GetNationalParks")]
         [ProducesResponseType(200, Type = typeof(NationalParkDto))]
         [ProducesResponseType(400)]
         [ProducesResponseType(404)]
         [ProducesDefaultResponseType]
-        public IActionResult GetNationlPark(int nationalParkId)
+        public IActionResult GetNationalPark(int nationalParkId)
         {
             NationalPark nationalPark = _npRepo.GetNationalPark(nationalParkId);
             if(nationalPark == null)
@@ -85,10 +85,6 @@ namespace ParkyAPI.Controllers
                 ModelState.AddModelError("", "National Park Exsist");
                 return StatusCode(404, ModelState);
             }
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
 
             NationalPark nationalPark = _mapper.Map<NationalPark>(nationalParkDto);
             if (!_npRepo.CreateNationalPark(nationalPark))
@@ -96,7 +92,7 @@ namespace ParkyAPI.Controllers
                 ModelState.AddModelError("", "Error with saving file");
                 return StatusCode(500, ModelState);
             }
-            return CreatedAtRoute("GetNationlPark", new {version=HttpContext.GetRequestedApiVersion().ToString(), nationalParkId = nationalPark.Id}, nationalPark);
+            return CreatedAtRoute("GetNationalPark", new {version=HttpContext.GetRequestedApiVersion().ToString(), nationalParkId = nationalPark.Id}, nationalPark);
 
         }
         /// <summary>
@@ -115,15 +111,7 @@ namespace ParkyAPI.Controllers
             {
                 return BadRequest(ModelState);
             }
-            if (_npRepo.NationalParkExist(nationalParkDto.Name))
-            {
-                ModelState.AddModelError("", $"National Park Exsist {nationalParkDto.Name}");
-                return StatusCode(404, ModelState);
-            }
-            if (!ModelState.IsValid)
-            {
-                return BadRequest();
-            }
+            
             NationalPark nationalPark = _mapper.Map<NationalPark>(nationalParkDto);
             if (!_npRepo.UpdateNationalPark(nationalPark))
             {
